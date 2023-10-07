@@ -1,12 +1,16 @@
 {
-  "name": "faunadb-products-api",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "deploy": "wrangler deploy",
-    "start": "wrangler dev"
-  },
-  "devDependencies": {
-    "wrangler": "^3.0.0"
-  }
+	"name": "faunadb-products-api",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"build": "worktop build src/index.js",
+		"start": "wrangler dev"
+	},
+	"devDependencies": {
+		"wrangler": "^3.0.0"
+	},
+	"dependencies": {
+		"worktop": "^0.7.3"
+	}
 }
