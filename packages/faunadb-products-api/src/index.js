@@ -1,5 +1,5 @@
 import {Router, listen} from 'worktop';
-import {getAllProduct} from './products/view.js'
+import {getAllProduct, getProduct} from './products/view.js'
 
 const router = new Router();
 
@@ -8,5 +8,7 @@ router.add('GET', '/', async (request, response) => {
 });
 
 router.add('GET', '/products', getAllProduct);
+
+router.add('GET', '/products/:productId', getProduct);
 
 listen(router.run);

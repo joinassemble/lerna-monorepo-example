@@ -36,3 +36,19 @@ export async function getAllProduct(request, response) {
 		response.send(faunaError.status, faunaError);
 	}
 }
+
+export async function getProduct(request, response) {
+	try {
+	  const productId = request.params.productId;
+  
+	  const result = await faunaClient.query(
+		Get(Ref(Collection('Products'), productId))
+	  );
+  
+	  response.send(200, result);
+  
+	} catch (error) {
+	  const faunaError = getFaunaError(error);
+	  response.send(faunaError.status, faunaError);
+	}
+}
