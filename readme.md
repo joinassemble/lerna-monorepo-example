@@ -11,6 +11,22 @@ This repository is built using lerna monorepo, worktop and faunadb
   ```
   wranger init faunadb-products-api
   ```
+- To install an npm package to an application, simply run this from the project root folder terminal:
+  ```
+  npm install <package_name> -workspace <application_name>
+  ```
+  For example:
+  ```
+  npm install faunadb -workspace faunadb-products-api
+  ```
+- To install an npm package to **all** applications, simply run this from the project root folder terminal:
+  ```
+  npm install <package_name> --workspaces
+  ```
+  For example:
+  ```
+  npm install faunadb --workspaces
+  ```
 - Environment variable is per application based. To create an environment variable and store it in Cloudflare worker, open up terminal, from the project root folder, head over to one of the applications, e.g. `cd packages/faunadb-products-api`, and then run:
   ```
   wrangler secret put <ENV_NAME>
